@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta charset="utf-8" />
+    <style>
+      <% if @block_preview %>
+        .container {
+            width: 960px;
+        }
+
+        .card {
+            margin: 5px;
+            overflow: hidden;
+            float: left;
+            width: 30%;
+            border: solid 2px #C4C1C1;
+        }
+
+        .card-main {
+            width: 48%;
+            float: left;
+            border: solid 1px #ff0000;
+            margin: 5px;
+            text-align: center;
+        }
+
+        .card-header {
+            padding: 0;
+        }
+
+      <% end %>
+        .card-body {
+            padding: 0;
+            min-height: 110px;
+            overflow: hidden;
+        }
+
+        .classImg img {
+            width: 90%;
+            border: solid 2px #C4C1C1;
+        }
+
+        .card-message {
+            margin-left: auto;
+            margin-right: auto;
+            width: 90%;
+            min-height: 70px;
+            border: solid 4px #C4C1C1;
+        }
+
+        .card-message {
+            margin-left: auto;
+            margin-right: auto;
+            width: 90%;
+            min-height: 110px;
+            border: solid 4px #C4C1C1;
+        }
+    </style>
+</head>
+<body>
+    <div class="card-main">
+        <div class="card-deck text-center">
+            <div class="card">
+                <div class="card-header">
+                  <% if @previewing_html %>
+                    <div class="classImg"><%= image_tag(@image_src + "/C00000000.png") %></div>
+                  <% elsif @previewing_pdf %>
+                    <div class="classImg"><img src=<%= "/home/leo/codesee/CodeseeSticker/app/assets/images/" + @image_src + "/C00000000.png" %> ></div>
+                  <% else %>
+                    <div class="classImg"><img src=<%= "/home/leo/codesee/CodeseeSticker/app/assets/images/" + @image_src + "/" +  serials[0] + ".png" %> ></div>
+                  <% end %>
+                </div>
+                <div class="card-body">
+                    <div class="card-message"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                  <% if @previewing_html %>
+                    <div class="classImg"><%= image_tag(@image_src + "/C00000001.png") %></div>
+                  <% elsif @previewing_pdf %>
+                    <div class="classImg"><img src=<%= "/home/leo/codesee/CodeseeSticker/app/assets/images/" + @image_src + "/C00000001.png" %> ></div>
+                  <% else %>
+                    <div class="classImg"><img src=<%= "/home/leo/codesee/CodeseeSticker/app/assets/images/" + @image_src + "/" +  serials[1] + ".png" %> ></div>
+                  <% end %>
+                </div>
+                <div class="card-body">
+                    <div class="card-message"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                  <% if @previewing_html %>
+                    <div class="classImg"><%= image_tag(@image_src + "/C00000002.png") %></div>
+                  <% elsif @previewing_pdf %>
+                    <div class="classImg"><img src=<%= "/home/leo/codesee/CodeseeSticker/app/assets/images/" + @image_src + "/C00000002.png" %> ></div>
+                  <% else %>
+                    <div class="classImg"><img src=<%= "/home/leo/codesee/CodeseeSticker/app/assets/images/" + @image_src + "/" +  serials[2] + ".png" %> ></div>
+                  <% end %>
+                </div>
+                <div class="card-body">
+                    <div class="card-message"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                  <% if @previewing_html %>
+                    <div class="classImg"><%= image_tag(@image_src + "/C00000003.png") %></div>
+                  <% elsif @previewing_pdf %>
+                    <div class="classImg"><img src=<%= "/home/leo/codesee/CodeseeSticker/app/assets/images/" + @image_src + "/C00000003.png" %> ></div>
+                  <% else %>
+                    <div class="classImg"><img src=<%= "/home/leo/codesee/CodeseeSticker/app/assets/images/" + @image_src + "/" +  serials[3] + ".png" %> ></div>
+                  <% end %>
+                </div>
+                <div class="card-body">
+                    <div class="card-message"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                  <% if @previewing_html %>
+                    <div class="classImg"><%= image_tag(@image_src + "/C00000004.png") %></div>
+                  <% elsif @previewing_pdf %>
+                    <div class="classImg"><img src=<%= "/home/leo/codesee/CodeseeSticker/app/assets/images/" + @image_src + "/C00000004.png" %> ></div>
+                  <% else %>
+                    <div class="classImg"><img src=<%= "/home/leo/codesee/CodeseeSticker/app/assets/images/" + @image_src + "/" +  serials[4] + ".png" %> ></div>
+                  <% end %>
+                </div>
+                <div class="card-body">
+                    <div class="card-message"></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                  <% if @previewing_html %>
+                    <div class="classImg"><%= image_tag(@image_src + "/C00000005.png") %></div>
+                  <% elsif @previewing_pdf %>
+                    <div class="classImg"><img src=<%= "/home/leo/codesee/CodeseeSticker/app/assets/images/" + @image_src + "/C00000005.png" %> ></div>
+                  <% else %>
+                    <div class="classImg"><img src=<%= "/home/leo/codesee/CodeseeSticker/app/assets/images/" + @image_src + "/" +  serials[5] + ".png" %> ></div>
+                  <% end %>
+                </div>
+                <div class="card-body">
+                    <div class="card-message"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

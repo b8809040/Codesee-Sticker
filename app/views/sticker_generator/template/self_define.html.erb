@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta charset="utf-8" />
+    <style>
+        .container {
+            width: 960px;
+        }
+
+        .card {
+            margin: 5px;
+            overflow: hidden;
+            float: left;
+            width: 30%;
+            border: solid 2px #C4C1C1;
+        }
+
+        .card-main {
+            width: 48%;
+            float: left;
+            border: solid 1px #ff0000;
+            margin: 5px;
+            text-align: center;
+        }
+
+        .card-header {
+            padding: 0;
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <%= render :partial => "sticker_generator/template/" + @template_lt, :locals => {:serials => @template_lt_serials} %>
+    <%= render :partial => "sticker_generator/template/" + @template_rt, :locals => {:serials => @template_rt_serials} %>
+</div>
+<div class="container">
+    <%=  render :partial => "sticker_generator/template/" + @template_lb, :locals => {:serials => @template_lb_serials} %>
+    <%=  render :partial => "sticker_generator/template/" + @template_rb, :locals => {:serials => @template_rb_serials} %>
+</div>
+</body>
+</html>

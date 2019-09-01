@@ -1,0 +1,2 @@
+class BatchRecord < ApplicationRecord
+end

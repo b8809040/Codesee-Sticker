@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Codesee Sticker Generator</title>
+</head>
+<script language="JavaScript">
+    function supplier_select(value) {
+        if(value == 'self_define') {
+            document.getElementById('template_setting').style.display = 'block';
+        } else if(value == 'blueco_18M' || value == 'blueco_40M') {
+            document.getElementById('template_setting').style.display = 'none';
+        }
+    }
+</script>
+<body>
+<%= label_tag("Curent counter:" + @current_counter.to_s) %><br>
+<%= label_tag("Curent batch counter:" + @current_batch_counter.to_s) %>
+<%= form_tag("/sticker_generator", method: "get") do %>
+  <%= label_tag("Supplier:") %>
+  <%= select_tag 'supplier', '<option value="blueco_40M">藍格40M</option><option value="blueco_18M">藍格18M</option><option value="self_define">自定義</option>'.html_safe, :onchange => 'supplier_select(this.options[this.options.selectedIndex].value)' %>
+  <br>
+  <div id='template_setting' style="display:none">
+    <%= label_tag("Template-LT:") %>
+    <%= select_tag 'template_lt', '<option value="classic_3x3">classic 3x3</option><option value="classic_2x3">classic 2x3</option>'.html_safe %>
+    <br>
+    <%= label_tag("Template-RT:") %>
+    <%= select_tag 'template_rt', '<option value="classic_3x3">classic 3x3</option><option value="classic_2x3">classic 2x3</option>'.html_safe %>
+    <br>
+    <%= label_tag("Template-LB:") %>
+    <%= select_tag 'template_lb', '<option value="classic_3x3">classic 3x3</option><option value="classic_2x3">classic 2x3</option>'.html_safe %>
+    <br>
+    <%= label_tag("Template-RB:") %>
+    <%= select_tag 'template_rb', '<option value="classic_3x3">classic 3x3</option><option value="classic_2x3">classic 2x3</option>'.html_safe %>
+    <br>
+  </div>
+  <%= label_tag("Number of copy:") %>
+  <%= text_field_tag(:copy) %>
+  <br>
+  <%= label_tag("Note:") %>
+  <%= text_field_tag(:note) %>
+  <br>
+  <%= submit_tag 'Preview HTML', name: 'preview_html' %>
+  <%= submit_tag 'Preview PDF', name: 'preview_pdf' %>
+  <%= submit_tag 'Download PDF', name: 'download_pdf' %>
+<% end %>
+</body>
+</html>
